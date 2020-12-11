@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Customization from "./components/Customization";
+import Dashboard from "./components/Dashboard";
+import Documentation from "./components/Documentation";
+import Logout from "./components/Logout";
+import SideBar from "./components/SideBar";
+import Support from "./components/Support";
+import { appRootStyles } from "./style";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={appRootStyles}>
+      <Router>
+        <SideBar />
+        <Switch>
+          <Route path="/customize">
+            <Customization />
+          </Route>
+          <Route path="/docs">
+            <Documentation />
+          </Route>
+          <Route path="/support">
+            <Support />
+          </Route>
+          <Route path="/logout">
+            <Logout />
+          </Route>
+          <Route path="/">
+            <Dashboard />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
