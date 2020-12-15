@@ -1,11 +1,11 @@
 import { css } from "emotion";
 
 export const sidebarRootStyles = css`
-  max-width: 300px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 50px;
+  padding: 30px;
 
   a {
     text-decoration: none;

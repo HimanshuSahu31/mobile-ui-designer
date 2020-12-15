@@ -8,7 +8,7 @@ export const customizationRootStyles = css`
 export const layoutRootStyles = css`
   flex: 3 1;
   margin: 30px;
-  background-color: #f8f8fc;
+  background-color: #dfdfe6;
   border-radius: 1em/1.2em;
   display: flex;
   justify-content: center;
@@ -19,7 +19,14 @@ export const optionsRootStyles = css`
   flex: 1 3;
 `;
 
-export const mobileLaytouRootStyles = css`
+export const mobileLaytoutRootStyles = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #dfdfe6;
+`;
+
+export const mobileLayoutStyles = css`
   height: 600px;
   width: 300px;
   background-color: #192752;

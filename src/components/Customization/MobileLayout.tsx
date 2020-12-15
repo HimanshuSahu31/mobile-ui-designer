@@ -1,8 +1,12 @@
 import React from "react";
-import { mobileLaytouRootStyles } from "./style";
+import { mobileLayoutStyles, mobileLaytoutRootStyles } from "./style";
 
 function MobileLayout() {
-  return <div className={mobileLaytouRootStyles}></div>;
+  return (
+    <div className={mobileLaytoutRootStyles}>
+      <div className={mobileLayoutStyles}></div>
+    </div>
+  );
 }
 
 export default MobileLayout;

@@ -1,14 +1,22 @@
 import React from "react";
 import MobileLayout from "../Customization/MobileLayout";
-import { templatesRootStyles } from "./style";
+import { carouselContainerStyles, templatesRootStyles } from "./style";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 function Templates() {
+  const carouselSettings = {
+    centerMode: true,
+    swipeable: true,
+    emulateTouch: true,
+    showIndicators: false,
+    centerSlidePercentage: 60,
+  };
+
   return (
     <div className={templatesRootStyles}>
-      <div>
-        <Carousel>
+      <div className={carouselContainerStyles}>
+        <Carousel {...carouselSettings}>
           <MobileLayout key="1" />
           <MobileLayout key="2" />
           <MobileLayout key="3" />
