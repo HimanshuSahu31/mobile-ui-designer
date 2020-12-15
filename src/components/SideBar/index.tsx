@@ -26,7 +26,7 @@ function SideBar() {
           ></i>
           <span>Dashboard</span>
         </Link>
-        <Link to="/customize" className={selectedNavLink}>
+        <Link to="/customize/new" className={selectedNavLink}>
           <i
             className={iconStyles}
             data-eva="options-outline"

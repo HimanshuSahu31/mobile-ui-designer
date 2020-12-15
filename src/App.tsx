@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import Customization from "./components/Customization";
 import Dashboard from "./components/Dashboard";
 import Documentation from "./components/Documentation";
@@ -14,7 +19,7 @@ function App() {
       <Router>
         <SideBar />
         <Switch>
-          <Route path="/customize">
+          <Route path="/customize/:id">
             <Customization />
           </Route>
           <Route path="/docs">
@@ -26,9 +31,11 @@ function App() {
           <Route path="/logout">
             <Logout />
           </Route>
-          <Route path="/">
+          <Route path="/dashboard">
             <Dashboard />
           </Route>
+
+          <Redirect to="/dashboard" />
         </Switch>
       </Router>
     </div>
