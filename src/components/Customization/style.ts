@@ -2,19 +2,21 @@ import { css } from "emotion";
 
 export const customizationRootStyles = css`
   display: flex;
-  align-items: stretch;
   flex: 1;
 `;
 
 export const layoutRootStyles = css`
-  flex: 3 1 300px;
+  flex: 3 1;
   margin: 30px;
   background-color: #f8f8fc;
   border-radius: 1em/1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const optionsRootStyles = css`
-  flex: 1 3 250px;
+  flex: 1 3;
 `;
 
 export const mobileLaytouRootStyles = css`

@@ -2,7 +2,7 @@ import { css } from "emotion";
 
 export const dashboardRootStyles = css`
   flex: 1;
-  width: 400px;
+  max-width: calc(100vw - 350px);
   margin: 50px;
   background-color: #f8f8fc;
   border-radius: 1em/1.2em;

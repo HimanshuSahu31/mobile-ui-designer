@@ -1,7 +1,7 @@
 import { css } from "emotion";
 
 export const sidebarRootStyles = css`
-  width: 200px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
