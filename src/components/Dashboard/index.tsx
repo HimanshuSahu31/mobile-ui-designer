@@ -1,11 +1,11 @@
 import React from "react";
 import { dashboardRootStyles } from "./style";
+import Templates from "./Templates";
 
 function Dashboard() {
   return (
     <div className={dashboardRootStyles}>
-      <h1>Dashboard</h1>
-      <p>This is the dashboard.</p>
+      <Templates />
     </div>
   );
 }

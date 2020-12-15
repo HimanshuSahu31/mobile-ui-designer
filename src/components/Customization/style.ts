@@ -18,12 +18,9 @@ export const optionsRootStyles = css`
 `;
 
 export const mobileLaytouRootStyles = css`
-  position: relative;
   height: 600px;
   width: 300px;
   background-color: #192752;
   border-radius: 1.8em/1.5em;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 20px;
 `;
