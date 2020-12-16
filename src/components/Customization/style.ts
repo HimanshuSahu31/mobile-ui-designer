@@ -29,11 +29,30 @@ export const mobileLaytoutRootStyles = css`
 export const mobileLayoutStyles = css`
   height: 600px;
   width: 300px;
-  background-color: #192752;
   border-radius: 1.8em/1.5em;
   margin: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+`;
+
+export const editButtonStyles = css`
+  position: absolute;
+  top: 5%;
+  right: 5%;
+`;
+
+export const editIconContainerStyles = css`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 15px;
+  position: relative;
+`;
+
+export const editIconStyles = css`
+  position: absolute;
+  top: -5%;
+  right: -5%;
 `;

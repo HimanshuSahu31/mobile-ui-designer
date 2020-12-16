@@ -15,7 +15,7 @@ function Templates() {
   };
 
   let templates: JSX.Element[] = listTemplates().map((t) => (
-    <MobileLayout key={t["id"]} id={t["id"]} />
+    <MobileLayout key={t["id"]} id={t["id"]} hasEditButton={true} />
   ));
 
   return (

@@ -8,7 +8,7 @@ function Layout() {
   let { id } = useParams();
   return (
     <div className={layoutRootStyles}>
-      <MobileLayout id={id} />
+      <MobileLayout id={id} hasEditButton={false} />
     </div>
   );
 }
