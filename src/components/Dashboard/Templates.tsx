@@ -3,6 +3,7 @@ import MobileLayout from "../Customization/MobileLayout";
 import { carouselContainerStyles, templatesRootStyles } from "./style";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { listTemplates } from "../../data/api";
 
 function Templates() {
   const carouselSettings = {
@@ -13,17 +14,14 @@ function Templates() {
     centerSlidePercentage: 60,
   };
 
+  let templates: JSX.Element[] = listTemplates().map((t) => (
+    <MobileLayout key={t["id"]} id={t["id"]} />
+  ));
+
   return (
     <div className={templatesRootStyles}>
       <div className={carouselContainerStyles}>
-        <Carousel {...carouselSettings}>
-          <MobileLayout key="1" />
-          <MobileLayout key="2" />
-          <MobileLayout key="3" />
-          <MobileLayout key="4" />
-          <MobileLayout key="5" />
-          <MobileLayout key="6" />
-        </Carousel>
+        <Carousel {...carouselSettings}>{templates}</Carousel>
       </div>
     </div>
   );

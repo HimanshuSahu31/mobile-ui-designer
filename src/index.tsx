@@ -4,11 +4,11 @@ import "./index.css";
 import App from "./App";
 import * as API from "./data/api";
 
+API.initialize();
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
-
-API.initialize();

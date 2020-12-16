@@ -32,4 +32,8 @@ export const mobileLayoutStyles = css`
   background-color: #192752;
   border-radius: 1.8em/1.5em;
   margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 `;

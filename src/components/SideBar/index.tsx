@@ -2,23 +2,31 @@ import React, { useEffect } from "react";
 import {
   bottomNavLinksStyles,
   iconStyles,
-  logoutButtonStyles,
+  navigationLinkStyles,
   selectedNavLink,
   sidebarRootStyles,
   topNavLinksStyles,
 } from "./style";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import * as eva from "eva-icons";
+import c from "classnames";
 
 function SideBar() {
   useEffect(() => {
     eva.replace();
   }, []);
 
+  let location = useLocation();
+
   return (
     <div className={sidebarRootStyles}>
       <div className={topNavLinksStyles}>
-        <Link to="/">
+        <Link
+          to="/"
+          className={c(navigationLinkStyles, selectedNavLink, {
+            selectedNavLink: location.pathname === "/dashboard" ? true : false,
+          })}
+        >
           <i
             className={iconStyles}
             data-eva="grid-outline"
@@ -26,7 +34,12 @@ function SideBar() {
           ></i>
           <span>Dashboard</span>
         </Link>
-        <Link to="/customize/new" className={selectedNavLink}>
+        <Link
+          to="/customize/new"
+          className={c(navigationLinkStyles, selectedNavLink, {
+            selectedNavLink: location.pathname === "/customize" ? true : false,
+          })}
+        >
           <i
             className={iconStyles}
             data-eva="options-outline"
@@ -34,7 +47,12 @@ function SideBar() {
           ></i>
           <span>Customization</span>
         </Link>
-        <Link to="/docs">
+        <Link
+          to="/docs"
+          className={c(navigationLinkStyles, selectedNavLink, {
+            selectedNavLink: location.pathname === "/docs" ? true : false,
+          })}
+        >
           <i
             className={iconStyles}
             data-eva="folder-outline"
@@ -42,7 +60,12 @@ function SideBar() {
           ></i>
           <span>Documentation</span>
         </Link>
-        <Link to="/support">
+        <Link
+          to="/support"
+          className={c(navigationLinkStyles, selectedNavLink, {
+            selectedNavLink: location.pathname === "/support" ? true : false,
+          })}
+        >
           <i
             className={iconStyles}
             data-eva="message-circle-outline"
@@ -52,7 +75,12 @@ function SideBar() {
         </Link>
       </div>
       <div className={bottomNavLinksStyles}>
-        <Link to="/logout" className={logoutButtonStyles}>
+        <Link
+          to="/logout"
+          className={c(navigationLinkStyles, selectedNavLink, {
+            selectedNavLink: location.pathname === "/logout" ? true : false,
+          })}
+        >
           <i
             className={iconStyles}
             data-eva="log-out-outline"

@@ -6,21 +6,6 @@ export const sidebarRootStyles = css`
   flex-direction: column;
   justify-content: space-between;
   padding: 30px;
-
-  a {
-    text-decoration: none;
-    color: #cccbce;
-    padding: 8px 18px 15px 15px;
-  }
-
-  a:hover {
-    background-color: #f8f9fd;
-    border-radius: 0.5em/0.5em;
-  }
-
-  span {
-    padding: 0px 10px;
-  }
 `;
 
 export const logoutButtonStyles = css``;
@@ -42,12 +27,29 @@ export const iconStyles = css`
   top: 5px;
 `;
 
-export const selectedNavLink = css`
-  background-color: #f8f9fd;
-  font-weight: bold;
-  border-radius: 0.6em/0.5em;
+export const navigationLinkStyles = css`
+  text-decoration: none;
+  color: #cccbce;
+  padding: 8px 18px 15px 15px;
+
+  a:hover {
+    background-color: #f8f9fd;
+    border-radius: 0.6em/0.5em;
+  }
 
   span {
-    color: #484c67;
+    padding: 0px 10px;
+  }
+`;
+
+export const selectedNavLink = css`
+  .selectedNavLink {
+    background-color: #f8f9fd;
+    font-weight: bold;
+    border-radius: 0.6em/0.5em;
+
+    span {
+      color: #484c67;
+    }
   }
 `;
