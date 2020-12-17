@@ -1,19 +1,22 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getTemplate, MobileLayoutTemplate } from "../../data/api";
+import { MobileLayoutTemplate } from "../../data/api";
 import {
   editButtonStyles,
   editIconStyles,
   editIconContainerStyles,
   mobileLayoutStyles,
   mobileLaytoutRootStyles,
+  layoutRootStyles,
+  saveButtonStyles,
 } from "./style";
 import { buildLayout } from "../../helper";
 import * as eva from "eva-icons";
 
 interface IMobileLayoutProps {
-  id: string;
+  template: MobileLayoutTemplate;
   hasEditButton: boolean;
+  editItem: any;
 }
 
 function MobileLayout(props: React.PropsWithChildren<IMobileLayoutProps>) {
@@ -21,33 +24,51 @@ function MobileLayout(props: React.PropsWithChildren<IMobileLayoutProps>) {
     eva.replace();
   }, []);
 
-  let template: MobileLayoutTemplate = getTemplate(props.id);
-  let innerLayout = buildLayout(template);
+  function editClickHandler(event: any) {
+    // @ts-ignore
+    const item = props.template.items[this.elementIndex];
+    console.log("edit clicked");
+    props.editItem(item);
+  }
+
+  let innerLayout = buildLayout(props.template);
   if (!props.hasEditButton) {
-    innerLayout = innerLayout.map((element) => {
+    innerLayout = innerLayout.map((element, index) => {
       return (
         <div className={editIconContainerStyles}>
-          <i
-            data-eva="edit"
-            data-eva-fill="#484c67"
-            className={editIconStyles}
-          ></i>{" "}
+          <div onClick={editClickHandler.bind({ elementIndex: index })}>
+            <i
+              data-eva="edit-outline"
+              data-eva-fill="#ffff"
+              className={editIconStyles}
+            ></i>
+          </div>
           {element}
         </div>
       );
     });
   }
-  return (
+  return props.hasEditButton ? (
     <div className={mobileLaytoutRootStyles}>
-      <div className={mobileLayoutStyles} style={template.style}>
+      <div className={mobileLayoutStyles} style={props.template.style}>
         {innerLayout}
-        {props.hasEditButton ? (
-          <Link to={"/customize/" + props.id} className={editButtonStyles}>
-            Edit
-          </Link>
-        ) : (
-          ""
-        )}
+        <Link
+          to={"/customize/" + props.template.id}
+          className={editButtonStyles}
+        >
+          Edit
+        </Link>
+      </div>
+    </div>
+  ) : (
+    <div className={layoutRootStyles}>
+      <div className={mobileLaytoutRootStyles}>
+        <div className={mobileLayoutStyles} style={props.template.style}>
+          {innerLayout}
+        </div>
+      </div>
+      <div className={saveButtonStyles}>
+        <button>Save</button>
       </div>
     </div>
   );

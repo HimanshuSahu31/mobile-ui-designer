@@ -17,6 +17,20 @@ export const layoutRootStyles = css`
 
 export const optionsRootStyles = css`
   flex: 1 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const editItemBoxStyles = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 200px;
+`;
+export const closeButtonStyles = css`
+  align-self: flex-end;
 `;
 
 export const mobileLaytoutRootStyles = css`
@@ -55,4 +69,9 @@ export const editIconStyles = css`
   position: absolute;
   top: -5%;
   right: -5%;
+`;
+
+export const saveButtonStyles = css`
+  align-self: flex-end;
+  padding-bottom: 50px;
 `;
